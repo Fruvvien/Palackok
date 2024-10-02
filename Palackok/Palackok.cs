@@ -52,14 +52,32 @@ namespace Palackok
             return this.maxUrtartalom / 35 + this.jelenlegiUrtartalom;
         }
 
-        public bool egyenloFuggveny() {
-
+        public void egyenloFuggveny(Palackok palack1, Palackok palack2) {
+            if(palack1 == palack2)
+            {
+                Console.WriteLine("egyenlőek");
+            }
+            Console.WriteLine("nem egyenlőek");
             
         }
-        public void hozzaOnt()
+        public void hozzaOnt(Palackok palack1, Palackok palack2)
         {
 
+            if(palack1 != palack2 && palack1.jelenlegiUrtartalom != 0 && palack2.jelenlegiUrtartalom != 0)
+            {
+                Console.WriteLine("Azonos a két ital, vagy üres valamelyik");
+            }
+            else
+            {
+                if(palack1.jelenlegiUrtartalom + palack2.jelenlegiUrtartalom <= palack1.maxUrtartalom)
+                {
+                    palack1.ital = "Keverék";
+                    palack1.jelenlegiUrtartalom += palack2.jelenlegiUrtartalom;
+                    Console.WriteLine("neve: " + palack1.Ital , "ürtartalma: " +  palack1.jelenlegiUrtartalom );
+                }
+               
 
+            }
 
         }
 

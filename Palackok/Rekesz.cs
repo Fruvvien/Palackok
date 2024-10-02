@@ -11,7 +11,7 @@ namespace Palackok
         private int max_teherbiras;
         private List<Palackok> palackok;
 
-        public Rekesz(string ital, int maxUrtartalom, int jelenlegiUrtartalom, int max_teherbiras) : base(ital, maxUrtartalom, jelenlegiUrtartalom)
+        public Rekesz( int max_teherbiras)
         {
             this.max_teherbiras = max_teherbiras;
             this.palackok = new List<Palackok>();

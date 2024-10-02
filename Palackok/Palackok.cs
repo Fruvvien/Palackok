@@ -53,7 +53,7 @@ namespace Palackok
         }
 
         public void egyenloFuggveny(Palackok palack1, Palackok palack2) {
-            if(palack1 == palack2)
+            if(palack1.ital == palack2.ital && palack1.jelenlegiUrtartalom == palack2.jelenlegiUrtartalom && palack1.maxUrtartalom == palack2.maxUrtartalom)
             {
                 Console.WriteLine("egyenlőek");
             }
@@ -63,7 +63,7 @@ namespace Palackok
         public void hozzaOnt(Palackok palack1, Palackok palack2)
         {
 
-            if(palack1 != palack2 && palack1.jelenlegiUrtartalom != 0 && palack2.jelenlegiUrtartalom != 0)
+            if(palack1.ital == palack2.ital && palack1.jelenlegiUrtartalom == palack2.jelenlegiUrtartalom && palack1.maxUrtartalom == palack2.maxUrtartalom && palack1.jelenlegiUrtartalom == 0 && palack2.jelenlegiUrtartalom == 0)
             {
                 Console.WriteLine("Azonos a két ital, vagy üres valamelyik");
             }
@@ -73,7 +73,7 @@ namespace Palackok
                 {
                     palack1.ital = "Keverék";
                     palack1.jelenlegiUrtartalom += palack2.jelenlegiUrtartalom;
-                    Console.WriteLine("neve: " + palack1.Ital , "ürtartalma: " +  palack1.jelenlegiUrtartalom );
+                    Console.WriteLine("neve: " + palack1.Ital + " űrtartalma: " +  palack1.jelenlegiUrtartalom );
                 }
                
 

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Palackok
 {
-    internal class Rekesz : Palackok
+    internal class Rekesz 
     {
         private int max_teherbiras;
         private List<Palackok> palackok;
-
-        public Rekesz( int max_teherbiras)
+        public int rekeszTeherbiras = 0;
+        public Rekesz(int max_teherbiras)
         {
             this.max_teherbiras = max_teherbiras;
             this.palackok = new List<Palackok>();
@@ -20,11 +20,7 @@ namespace Palackok
         public int suly()
         {
             int osszSuly = 0;
-            if (palackok.Count == 0)
-            {
-                return osszSuly;
-            }
-            else
+            if (palackok.Count != 0)
             {
                 foreach (var item in palackok)
                 {
@@ -32,25 +28,30 @@ namespace Palackok
                 }
                 return osszSuly;
             }
+            else
+            {
+                return 0;
+            }
 
         }
 
         public void ujPalack(Palackok palack)
         {
-            this.palackok.Add(palack);
-            if (suly() < max_teherbiras)
+          
+            rekeszTeherbiras += palack.JelenlegiUrtartalom;
+            if (rekeszTeherbiras <= max_teherbiras)
+            {
+                this.palackok.Add(palack);
+            }else
             {
 
-            }
-            else
-            {
                 this.palackok.Remove(palack);
             }
             
         }
-        public int osszesPenz()
+        public double osszesPenz()
         {
-            int osszesPenz = 0;
+            double osszesPenz = 0;
             foreach (var item in palackok)
             {
                if(item is VisszavalthatoPalack palack)
